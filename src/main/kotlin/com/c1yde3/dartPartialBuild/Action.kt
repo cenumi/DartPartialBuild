@@ -16,16 +16,15 @@ private fun createAndExecute(module: Module, selectedFile: VirtualFile, command:
 
     val modulePath = ModuleRootManager.getInstance(module).contentRoots.first().path
 
-    val terminal =
-        TerminalToolWindowManager.getInstance(module.project).createLocalShellWidget(modulePath, command)
+    val terminal = TerminalToolWindowManager.getInstance(module.project).createLocalShellWidget(modulePath, command)
 
 
     if (selectedFile.isDirectory) {
-        terminal.executeCommand("dart run build_runner $command -d --build-filter=\"${selectedFile.path}/*/**.dart\"")
+        terminal.executeCommand("dart run build_runner $command --build-filter=\"${selectedFile.path}/**.dart\"")
     }
 
     if (selectedFile.isFile) {
-        terminal.executeCommand("dart run build_runner $command -d --build-filter=\"${selectedFile.parent.path}/*/**.dart\"")
+        terminal.executeCommand("dart run build_runner $command --build-filter=\"${selectedFile.parent.path}/**.dart\"")
     }
 }
 

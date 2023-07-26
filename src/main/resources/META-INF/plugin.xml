@@ -24,9 +24,9 @@
 
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
-<!--    <extensions defaultExtensionNs="com.intellij">-->
+    <!--    <extensions defaultExtensionNs="com.intellij">-->
 
-<!--    </extensions>-->
+    <!--    </extensions>-->
     <actions>
         <action id="com.c1yde3.dartPartialBuild.BuildAction" class="com.c1yde3.dartPartialBuild.BuildAction"
                 text="Build Runner Build" description="Run build_runner build">
